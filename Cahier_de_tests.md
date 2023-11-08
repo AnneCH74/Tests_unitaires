@@ -113,7 +113,7 @@ RESULTAT ATTENDU :
 Cet exemple sert à vérifier que la fonction produit le résultat attendu dans le cadre d'une utilisation normale :
 
 NOM DU TEST : deleteTask - supprimer une tâche
-ID DU TEST : 003A
+ID DU TEST : 003
 OBJECTIF : une tâche doit pouvoir être supprimée
 REFERENCES : user story V1
 CONDITIONS PREALABLES : avoir à minima une tâche dans la to-do list
@@ -131,4 +131,4 @@ La couverture du code structurel est l'identification du code qui a été exécu
 
 Qu'est-ce-qu'une couverture de code acceptable ?
 Nous recommandons une couverture de code minimale de 60 %, qui devrait être facile à obtenir. Cela vous rassurera un peu mais savoir que 40% du code n'a pas été testé risque de vous donner des nuits blanches. Certains recommandent 70 à 80 %, mais la meilleure façon de déterminer si vous devez augmenter votre pourcentage de couverture est basée sur le nombre de défauts qui ont été identifiés.
-ATTENTION en cas de normes ISO (automobile, domaine médical, etc.) 
+ATTENTION en cas de normes ISO (automobile, domaine médical, etc.) = couverture à 100%
