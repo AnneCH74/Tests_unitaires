@@ -5,6 +5,7 @@
     "vitest": "^0.34.6"
   },
   "scripts": {
+    "test": "vitest",
     "vitest": "vitest --ui",
     "coverage": "vitest run --coverage"
   }
