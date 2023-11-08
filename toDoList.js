@@ -70,7 +70,7 @@ if (index !== -1){
 }
 
 
-//Array with Olfa
+//Array to do list
 
 export function addNewTask(arrayTasks, task1){
 arrayTasks.push(task1)

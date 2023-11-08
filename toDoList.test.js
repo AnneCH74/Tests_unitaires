@@ -12,6 +12,26 @@ test('create a new task', () => {
 expect(add("Jordan doit")).toBe("call Lyoubo")
 })
 
+// 001 - add New Task
+
+test('addNewTask',  () => {
+  var arrayTasks = [];
+
+  var task1 = {
+    "label" : "Nettoyer la cuisine",
+    "done" : false
+  }
+
+  /*var task2 = {
+    "label" : "Faire la vaisselle",
+    "done" : true
+  }*/
+
+addNewTask(arrayTasks, task1)
+expect(arrayTasks).toContain(task1);
+})
+
+
 
 //002 - changeOrder : changer l'ordre d'une tâche
 
@@ -76,22 +96,9 @@ test('Supprimer une tâche existante', () => {
 });
 
 
-test('addNewTask',  () => {
-  var arrayTasks = [];
 
-  var task1 = {
-    "label" : "Nettoyer la cuisine",
-    "done" : false
-  }
 
-  /*var task2 = {
-    "label" : "Faire la vaisselle",
-    "done" : true
-  }*/
 
-addNewTask(arrayTasks, task1)
-expect(arrayTasks).toContain(task1);
-})
 
   
  
