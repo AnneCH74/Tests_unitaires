@@ -32,3 +32,102 @@ Ecrire les tests avant d'écrire le code.
 
 https://fr.wikipedia.org/wiki/Test_driven_development#:~:text=Test%2DDriven%20Development%20(TDD),%C3%A0%20r%C3%A9soudre%20sous%20forme%20d
 https://2022.stateofjs.com/fr-FR/libraries/testing/
+
+
+
+
+REALISATION DE TESTS UNITAIRES = logique inversée => Ecrire le test PUIS écrire la fonction
+
+Ecrire le test = montrer une photo d'un gâteau (résultat attendu) PUIS Ecrire la fonction = avoir en sa possession la recette du gâteau et la faire : retourner le gâteau (résultat obtenu, conforme au résultat attendu)
+
+Par exemple :
+ECRIRE LE TEST (step 1)
+
+Fichier "calc.test.js" :
+
+import { divide } from "./calc";
+
+test('divides 10 by 5 equals 2', () => {
+  expect(divide(10, 5)).toBe(2)
+})
+
++
+
+Fichier "calc.js" :
+
+export function divide(a,b){
+    
+}
+
+Terminal result = failed (red)
+
+PUIS
+ECRIRE LA FONCTION (step 2)
+
+Fichier "calc.js" :
+export function divide(a,b){
+    return a/b
+}
+
+Terminal result = success (green)
+
+
+
+
+
+
+Un aperçu détaillé de la syntaxe de test :
+
+it(description, testFunction) : La fonction it (ou test, ce sont des synonymes) est utilisée pour créer un scénario de test distinct. Il faut deux paramètres :
+
+description : Il s’agit d’une chaîne descriptive qui explique ce que fait le test. Cette ligne s'affiche pendant l'exécution du test et vous aide à comprendre exactement ce qui est testé dans le test.
+
+testFunction : Il s’agit de la fonction qui contient la logique de test. Dans cette fonction, vous définissez les étapes de test et appelez la fonction expect pour vérifier le résultat.
+
+expect(value) : La fonction expect prend la valeur que vous souhaitez tester et renvoie un objet « attente ». Cet objet contient des méthodes pour déterminer le résultat attendu. Les méthodes les plus courantes incluent :
+
+toBe(expected) : vérifie si la valeur est égale à la valeur attendue.
+
+toEqual (attendu) : vérification de l'égalité profonde des objets.
+
+not.toBe(expected) : vérifie que la valeur n'est pas égale à la valeur attendue.
+
+toThrow(expected) : vérifie que la fonction lève une exception qui correspond à celle attendue.
+
+Il existe de nombreuses autres méthodes pour différents types de contrôles.
+
+
+Exemple pour illustrer les explications de la syntaxe de test ci-dessus :
+
+// test addTask 
+
+describe ('add a new task', () =>{
+
+  it('have to add a new task in the array', () => {
+
+    const tasks = [];
+
+    const obj = {
+        name: "call Anne",
+        task: {
+          label: "call Anne this friday",
+          done: false
+        }
+    }
+
+    addTask(obj, tasks);
+    expect(tasks.length === 1).toBe(true)
+
+  })
+
+
+})
+
+
+// addTask
+
+function addTask (object, tasks){
+  tasks.push(object);
+}
+
+export { sum, addTask}
